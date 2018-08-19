@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: "Aida TEST"
+    version: "test"
+server:
+  port: 8080
+logging:
+  level:
+    root: INFO
+    pl.sparkidea: DEBUG
+async:
+  threads: 2
+slack:
+  apiToken: "xoxb-510624169945-194160150975-WwOjbrlIkwyEJKGArCm5Jx6y"
+  verificationToken: "cLuXQ5OXB7SP1cX6PLSL8dTu"
+  appId: "F8TAC6QVL"
+  botId: "5AVBBC73H"
+  defaultChannelId: "D35LHCC6C"

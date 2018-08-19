@@ -1,0 +1,22 @@
+{
+  "token": "cLuXQ5OXB7SP1cX6PLSL8dTu",
+  "team_id": "TC88NGRF0",
+  "api_app_id": "F8TAC6QVL",
+  "event": {
+    "text": "<@UC6CD33MF> Auto reply for: XXXXXXX",
+    "username": "Aida-test",
+    "bot_id": "5AVBBC73H",
+    "type": "message",
+    "subtype": "bot_message",
+    "ts": "1534094147.000015",
+    "channel": "DC6QWDUE7",
+    "event_ts": "1534094147.000015",
+    "channel_type": "im"
+  },
+  "type": "event_callback",
+  "event_id": "EvC8G25G22",
+  "event_time": 1534094147,
+  "authed_users": [
+    "UC6CD33MF"
+  ]
+}

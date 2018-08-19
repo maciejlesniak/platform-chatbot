@@ -1,0 +1,84 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+
+    test {
+        groovy {
+            srcDirs = ['src/test/groovy']
+        }
+    }
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+group = 'pl.sparkidea.bot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+task updateVersion {
+    group 'Versioning'
+    description 'Increments application version configuration'
+
+    doLast {
+        def configFile = new File('src/main/resources/application.yml')
+        String configContent = configFile.getText('UTF-8')
+        configContent = configContent.replaceAll(/version:(.*)/, "version: \"${version}\"")
+        configFile.write(configContent, 'UTF-8')
+    }
+}
+
+dependencies {
+
+    compileOnly('org.projectlombok:lombok')
+
+    compile(
+            project(':dispatcher'),
+            'org.springframework.boot:spring-boot-starter-validation',
+            'org.springframework.boot:spring-boot-starter-webflux'
+    )
+
+
+    testCompile(
+            'org.springframework.boot:spring-boot-starter-test',
+            'org.springframework.boot:spring-boot-test-autoconfigure',
+            'io.projectreactor:reactor-test',
+            'junit:junit:4.12',
+
+            'org.spockframework:spock-spring:1.1-groovy-2.4',
+            'org.codehaus.groovy:groovy-all:2.4.4',
+            'org.spockframework:spock-core:1.1-groovy-2.4'
+    )
+
+    runtime('org.springframework.boot:spring-boot-devtools')
+}

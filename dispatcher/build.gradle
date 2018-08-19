@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+group 'pl.sparkidea.bot'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+
+    test {
+        groovy {
+            srcDirs = ['src/test/groovy']
+        }
+    }
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+dependencies {
+    implementation(
+            'io.projectreactor:reactor-core:3.1.8.RELEASE',
+            'com.fasterxml.jackson.core:jackson-databind:2.9.6'
+    )
+
+    testImplementation(
+            'junit:junit:4.12',
+            'org.codehaus.groovy:groovy-all:2.4.4',
+            'org.spockframework:spock-core:1.0-groovy-2.4'
+    )
+
+}

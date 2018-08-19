@@ -1,0 +1,20 @@
+{
+  "token": "cLuXQ5OXB7SP1cX6PLSL8dTu",
+  "team_id": "TC88NGRF0",
+  "api_app_id": "F8TAC6QVL",
+  "event": {
+    "type": "app_mention",
+    "user": "UC6CD33MF",
+    "text": "<@UC80F2PUP> someone mentioned Aida",
+    "client_msg_id": "ffa4aaf6-d2aa-43c7-8b80-5010b6b822ed",
+    "ts": "1534176459.000279",
+    "channel": "CC6CD35LH",
+    "event_ts": "1534176459.000279"
+  },
+  "type": "event_callback",
+  "event_id": "EvC7GE823V",
+  "event_time": 1534176459,
+  "authed_users": [
+    "UC80F2PUP"
+  ]
+}

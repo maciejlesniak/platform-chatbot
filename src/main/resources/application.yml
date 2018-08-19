@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: "Aida"
+    version: "0.0.1-SNAPSHOT"
+  banner:
+    location: aida-banner.txt
+server:
+  port: 8080
+logging:
+  level:
+    root: INFO
+    pl.sparkidea: DEBUG
+async:
+  threads: 2
+slack:
+  apiToken: ${SLACK_API_TOKEN}
+  verificationToken: ${SLACK_VERIFICATION_TOKEN}
+  appId: ${SLACK_APP_ID}
+  botId: ${SLACK_BOT_ID}
+  defaultChannelId: ${SLACK_DEFAULT_CHANNEL}
